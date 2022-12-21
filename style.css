@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
+
+* { 
+	padding: 0px; 
+	margin: 0px; 
+	border: 0px; 
+	outline: 0px; 
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	font-size: 13px;
+	font-family: 'Open Sans', sans-serif; 
+	background: #efefef;
+	color: #999;
+}
+
+p { margin-top: 10px; }
+
+h1 { 
+	color: #1d1d1d; 
+	font-size: 1.5em;
+}
+
+#container {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-transform-origin: center -50%;
+	transform-origin: center -50%;
+	-webkit-transition: 0.8s ease-in-out;
+	transition: 0.8s ease-in-out;
+}
+
+.loading #container, .zoom #container {
+	-webkit-transform: scale(0.5);
+	transform: scale(0.5);
+}
+
+#viewport {
+	overflow: hidden;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+#menu {
+	position: fixed;
+	z-index: 200;
+	top: 50px;
+	left: 0px;
+}
+
+#menu li { 
+	list-style: none; 
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+#menu a {
+	text-decoration: none;
+	display: inline-block;
+	padding: 5px 0px 5px 50px;
+	color: #999;
+}
+
+#menu .active a { color: #1d1d1d; }
+
+.page {
+	background: #fff;
+	width: 100%;
+	height: 100%;
+	padding: 50px;
+	position: absolute;	
+	overflow-y: scroll;
+	top: -100%;
+	box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.1);
+	-webkit-transition: 0.6s ease-in-out;
+	transition: 0.6s ease-in-out;
+}
+
+#rotator {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 100%;
+	-webkit-transition: 0.6s ease-in-out;
+	transition: 0.6s ease-in-out;
+}
+
+.loading .page { opacity: 0; }
+
+#rotator.r1 {
+	-webkit-transform: rotate(0deg);
+	transform: rotate(0deg);
+}
+
+#rotator.r2 {
+	-webkit-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+}
+
+#rotator.r3 {
+	-webkit-transform: rotate(-180deg);
+	transform: rotate(-180deg);
+}
+
+#rotator.r4 {
+	-webkit-transform: rotate(-270deg);
+	transform: rotate(-270deg);
+}
+
+#intro {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -100px 0px 0px -100px;
+	-webkit-transition: 0.6s ease-in-out;
+	transition: 0.6s ease-in-out;
+}
+
+.zoom #intro, .loading #intro {
+	-webkit-animation: rotate 0.5s infinite;
+	animation: rotate 0.5s infinite;
+}
+
+@-webkit-keyframes rotate {
+	0% { -webkit-transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes rotate {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+#intro i { 
+	font-size: 200px;
+	height: 200px;
+	width: 200px;
+	line-height: 200px;
+	text-align: center;
+}
+
+#p2 {
+	-webkit-transform-origin: left bottom;
+	transform-origin: left bottom;
+	-webkit-transform: translate(100%, 0px) rotate(90deg);
+	transform: translate(100%, 0px) rotate(90deg);
+}
+
+#p3 {
+	-webkit-transform-origin: center bottom;
+	transform-origin: center bottom;
+	-webkit-transform: translate(0px, 100%) rotate(180deg);
+	transform: translate(0px, 100%) rotate(180deg);
+}
+
+#p4 {	
+	-webkit-transform-origin: left bottom;
+	transform-origin: left bottom;
+	-webkit-transform: translate(0px, 100%) rotate(270deg);
+	transform: translate(0px, 100%) rotate(270deg);
+}
